@@ -1,0 +1,55 @@
+<topology
+    xmlns="http://www.cisco.com/VIRL"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <extensions>
+        <entry key="management_network" type="String">user</entry>
+    </extensions>
+    <node location="258,59" type="SIMPLE" subtype="IOSv" name="RouterNY">
+        <extensions>
+            <entry key="config" type="string"/>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0"/>
+    </node>
+    <node location="820,59" type="SIMPLE" subtype="IOSv" name="iosv-2">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="820,328" type="SIMPLE" subtype="IOSv" name="iosv-3">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="301,328" type="SIMPLE" subtype="IOSv" name="iosv-4">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="879,118" type="SIMPLE" subtype="server" name="server-1">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="879,427" type="SIMPLE" subtype="server" name="server-2">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="136,118" type="SIMPLE" subtype="server" name="server-3">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <node location="136,427" type="SIMPLE" subtype="server" name="server-4">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+    </node>
+    <annotations>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="29" x="110" font-family="sans-serif" underline="false">New York HQ</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="298" x="947" font-family="sans-serif" underline="false">PA DR</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="308" x="127" font-family="sans-serif" underline="false">Texas</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="47" x="924" font-family="sans-serif" underline="false">NJ Datacenter</text>
+    </annotations>
+</topology>
