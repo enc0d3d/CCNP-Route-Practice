@@ -1,0 +1,63 @@
+<topology
+    xmlns="http://www.cisco.com/VIRL"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <extensions>
+        <entry key="management_network" type="String">user</entry>
+        <entry key="AutoNetkit.IGP" type="String">eigrp</entry>
+    </extensions>
+    <node location="821,100" type="SIMPLE" subtype="IOSv" name="R1">
+        <extensions>
+            <entry key="config" type="string"/>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0" ipv4="192.168.1.1"/>
+    </node>
+    <node location="821,251" type="SIMPLE" subtype="IOSv" name="R2">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+            <entry key="AutoNetkit.IGP" type="String">ospf</entry>
+            <entry key="AutoNetkit.custom_config_eigrp" type="String">100</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0" ipv4="192.168.1.2"/>
+        <interface name="GigabitEthernet0/2" id="1" ipv4="192.168.2.1"/>
+        <interface name="GigabitEthernet0/3" id="2" ipv4="192.168.3.1"/>
+    </node>
+    <node location="821,446" type="SIMPLE" subtype="IOSv" name="R3">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0" ipv4="192.168.2.2"/>
+        <interface name="GigabitEthernet0/2" id="1" ipv4="192.168.4.1"/>
+    </node>
+    <node location="544,251" type="SIMPLE" subtype="IOSv" name="R4">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0" ipv4="192.168.3.2"/>
+        <interface name="GigabitEthernet0/2" id="1" ipv4="192.168.4.2"/>
+        <interface name="GigabitEthernet0/3" id="2"/>
+        <interface name="GigabitEthernet0/4" id="3" ipv4="172.16.100.2"/>
+    </node>
+    <node location="333,197" type="SIMPLE" subtype="IOSv" name="iosv-5">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet0/1" id="0" ipv4="172.16.100.1"/>
+    </node>
+    <annotations>
+        <text font-size="20" bold="true" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="12" x="389" font-family="sans-serif" underline="false">Route Redistribution Practice</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="165" x="829" font-family="sans-serif" underline="false">192.168.1.0/24</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="225" x="656" font-family="sans-serif" underline="false">OSPF Area 24</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="352" x="605" font-family="sans-serif" underline="false">OSPF Area 34</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="367" x="601" font-family="sans-serif" underline="false">192.168.4.0/24</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="337" x="853" font-family="sans-serif" underline="false">EIGRP
+AS 100</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="325" x="824" font-family="sans-serif" underline="false">192.168.2.0/24</text>
+        <text font-size="12" bold="false" fill-opacity="1" strikethrough="false" text-anchor="start" italic="false" y="238" x="661" font-family="sans-serif" underline="false">192.168.3.0</text>
+    </annotations>
+    <connection src="/virl:topology/virl:node[3]/virl:interface[2]" dst="/virl:topology/virl:node[4]/virl:interface[2]"/>
+    <connection src="/virl:topology/virl:node[2]/virl:interface[2]" dst="/virl:topology/virl:node[3]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[2]/virl:interface[3]" dst="/virl:topology/virl:node[4]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[4]/virl:interface[4]" dst="/virl:topology/virl:node[5]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[1]/virl:interface[1]" dst="/virl:topology/virl:node[2]/virl:interface[1]"/>
+</topology>
